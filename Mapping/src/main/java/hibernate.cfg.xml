@@ -1,0 +1,48 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
+		<property name="hibernate.connection.username">system</property>
+		<property name="hibernate.connection.password">123456</property>
+		<property name="show_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">create-drop</property>
+
+		<!-- One to One Unidirectional Mapping -->
+		<mapping class="com.hibernate.OnetoOneUni.Student" />
+		<mapping class="com.hibernate.OnetoOneUni.Address" />
+
+		<!-- One to One Bidirectional Mapping -->
+		<mapping class="com.hibernate.OnetoOneBi.Student1" />
+		<mapping class="com.hibernate.OnetoOneBi.Address1" />
+
+		<!-- One to Many Unidirectional Mapping -->
+		<mapping class="com.hibernate.OneToManyUni.College" />
+		<mapping class="com.hibernate.OneToManyUni.Students" />
+
+		<!-- One to Many Bidirectional Mapping -->
+		<mapping class="com.hibernate.OneToManyBi.Departments" />
+		<mapping class="com.hibernate.OneToManyBi.TalentStudents" />
+
+		<!-- Many to one Unidirectional Mapping -->
+		<mapping class="com.hibernate.ManyToOneUni.Company" />
+		<mapping class="com.hibernate.ManyToOneUni.Employee" />
+
+		<!-- Many to one Bidirectional Mapping -->
+		<mapping class="com.hibernate.ManyToOneBi.Hospitals" />
+		<mapping class="com.hibernate.ManyToOneBi.Patients" />
+
+		<!-- Many to Many Unidirectional Mapping -->
+		<mapping class="com.hibernate.ManyToManyUni.Books" />
+		<mapping class="com.hibernate.ManyToManyUni.Authors" />
+	
+		<!-- Many to Many Bidirectional Mapping -->
+		<mapping class="com.hibernate.ManyToManyBi.Farms" />
+		<mapping class="com.hibernate.ManyToManyBi.Crops" />
+
+	</session-factory>
+</hibernate-configuration>
